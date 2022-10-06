@@ -3,6 +3,7 @@ library(viridis)
 library(haven)
 library(labelled)
 library(labeling)
+library(modelsummary)
 
 #load df
 df <- read_sav("Data/FLSU0010_OUTPUT.sav") 
@@ -213,3 +214,37 @@ ggplot(gender, aes(x=APP_1_amt_1, y=APP_2_amt_1)) + theme_bw() +
        y = "$$ Given to Treatment",
        color = "Treatment")
 ggsave("figs/dollars-given-by-treatment-condition.png")
+
+df_reg <- df2 %>%
+  select(amt_diff, applicant_2_rate, applicant_2_high_comp, applicant_2_sex,
+         applicant_2_name, APP_1_amt_1, APP_2_amt_1, STATE_amt_1) %>%
+  mutate(app2_exc = as.numeric(applicant_2_rate),
+         app2_exc = recode(applicant_2_rate,
+                           "Excellent" = 1,
+                           "Poor" = 0)) %>%
+  mutate(app2_fem = as.numeric(applicant_2_sex),
+         app2_fem = recode(applicant_2_sex,
+                           "Female" = 1,
+                           "Male" = 0)) 
+
+just_sex <- lm(amt_diff ~ app2_fem, data=df_reg)
+w_controls <- lm(amt_diff ~ app2_fem + app2_exc + applicant_2_high_comp + STATE_amt_1, 
+                 data=df_reg)
+w_comp_inter <- lm(amt_diff ~ app2_fem*applicant_2_high_comp + app2_exc + STATE_amt_1,
+                   data=df_reg)
+w_qual_inter <- lm(amt_diff ~ app2_fem*app2_exc + applicant_2_high_comp + STATE_amt_1,
+                   data=df_reg)
+
+stargazer::stargazer(just_sex, w_controls, w_comp_inter, w_qual_inter, 
+                     style = "ajps", type="latex")
+
+just_sex2 <- lm(APP_2_amt_1 ~ app2_fem, data=df_reg)
+w_controls2 <- lm(APP_2_amt_1 ~ app2_fem + app2_exc + applicant_2_high_comp + STATE_amt_1, 
+                 data=df_reg)
+w_comp_inter2 <- lm(APP_2_amt_1 ~ app2_fem*applicant_2_high_comp + app2_exc + STATE_amt_1,
+                   data=df_reg)
+w_qual_inter2 <- lm(APP_2_amt_1 ~ app2_fem*app2_exc + applicant_2_high_comp + STATE_amt_1,
+                   data=df_reg)
+
+stargazer::stargazer(just_sex2, w_controls2, w_comp_inter2, w_qual_inter2, 
+                     style = "ajps", type="text")
