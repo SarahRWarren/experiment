@@ -4,6 +4,7 @@ library(haven)
 library(labelled)
 library(labeling)
 library(modelsummary)
+library(gridExtra)
 
 #load df
 df <- read_sav("Data/FLSU0010_OUTPUT.sav") 
@@ -62,7 +63,7 @@ gender <- df %>%
   mutate(applicant_1_rate = "Excellent") %>%
   mutate(applicant_1_name = "Sandra") %>%
   mutate(applicant_1_char = "Sandra (Exc)")
-write_csv(gender, "Data/gender_df.csv")
+#  write_csv(gender, "Data/gender_df.csv")
 
 gender$amt_diff <- (gender$APP_2_amt_1 - gender$APP_1_amt_1)
 
@@ -76,7 +77,7 @@ gender <- gender%>%
 
 for_fig2 <- gender %>%
   select(applicant2_treat, app_1_amt_av, app_2_amt_av, STATE_amt_av, 
-         applicant_2_name, applicant_2_rate)%>%
+         applicant_2_name, applicant_2_rate, applicant_2_sex)%>%
   pivot_longer(app_1_amt_av:STATE_amt_av, names_to = "person", 
                values_to = "amount")
 
@@ -86,20 +87,6 @@ for_fig2 <- for_fig2 %>%
   filter(applicant2_treat < 7) #drop no-name
 
 
-
-
-ggplot(for_fig, aes(x=person, y=amount, color=female)) +
-  geom_point(aes(shape=person, color=female)) + theme_bw()+
-  scale_color_viridis_d(name="R Female?") +
-  scale_shape_discrete(name="Recipient",
-                     labels=c("Sandra", "Treatment", "State")) +
-  geom_errorbar(aes(ymin=amount-(se*1.96), ymax=amount+(se*1.96)),
-                width=.2) +
-  facet_wrap(vars(applicant_2_rate)) +
-  labs(x = "",
-       y = "Average Dollars Awarded") +
-  theme(axis.text.x = element_blank())
-ggsave("figs/general_results_name.png")
 
 
 ##Difference in means
@@ -194,6 +181,43 @@ res14
 res15 <- t.test(pmist, pjames, paired = FALSE)
 res15
 
+
+##ROBUSTNESS CHECK
+## no name vs sandra
+nn <- read_csv("Data/gender_df.csv") %>%
+  subset(applicant2_treat == "7")
+
+nn <- nn%>%
+  group_by(applicant2_treat)%>%
+  mutate(app_2_amt_av = mean(APP_2_amt_1))%>%
+  mutate(app_1_amt_av = mean(APP_1_amt_1))%>%
+  mutate(STATE_amt_av = mean(STATE_amt_1))
+
+##t-test Sandra vs. no name
+s <- nn$APP_1_amt_1
+no_name <- nn$APP_2_amt_1
+res_robust <- t.test(s, no_name, paired = TRUE)
+res_robust
+
+##PLOTS
+summary(for_fig2$amount)
+ggplot(for_fig2, aes(x=person, y=amount, color = applicant_2_rate)) + 
+  geom_point(aes(shape = person)) +
+  facet_wrap(vars(applicant_2_name)) +
+  geom_errorbar(aes(ymin =amount - 1.96*se, ymax=amount + 1.96*se)) +
+  theme_classic() +
+  scale_color_viridis(discrete = TRUE) +
+  scale_shape_discrete(labels=c('Baseline', 'Treatment', 'State')) +
+  theme(axis.text.x = element_blank()) +
+  theme(legend.key.height = unit(.9, 'mm'),
+         legend.position = c(.85,.4)) +
+  labs(x = "",
+       y = "Average Dollars Awarded",
+       shape = "Recipient",
+       color = "Quality of Treatment Name")
+  ggsave("figs/general-results-name.png", height = 6, width = 8)
+  
+
 ##scatter
 ggplot(gender, aes(x=APP_1_amt_1, y=APP_2_amt_1)) + 
   geom_point() +
@@ -214,37 +238,3 @@ ggplot(gender, aes(x=APP_1_amt_1, y=APP_2_amt_1)) + theme_bw() +
        y = "$$ Given to Treatment",
        color = "Treatment")
 ggsave("figs/dollars-given-by-treatment-condition.png")
-
-df_reg <- df2 %>%
-  select(amt_diff, applicant_2_rate, applicant_2_high_comp, applicant_2_sex,
-         applicant_2_name, APP_1_amt_1, APP_2_amt_1, STATE_amt_1) %>%
-  mutate(app2_exc = as.numeric(applicant_2_rate),
-         app2_exc = recode(applicant_2_rate,
-                           "Excellent" = 1,
-                           "Poor" = 0)) %>%
-  mutate(app2_fem = as.numeric(applicant_2_sex),
-         app2_fem = recode(applicant_2_sex,
-                           "Female" = 1,
-                           "Male" = 0)) 
-
-just_sex <- lm(amt_diff ~ app2_fem, data=df_reg)
-w_controls <- lm(amt_diff ~ app2_fem + app2_exc + applicant_2_high_comp + STATE_amt_1, 
-                 data=df_reg)
-w_comp_inter <- lm(amt_diff ~ app2_fem*applicant_2_high_comp + app2_exc + STATE_amt_1,
-                   data=df_reg)
-w_qual_inter <- lm(amt_diff ~ app2_fem*app2_exc + applicant_2_high_comp + STATE_amt_1,
-                   data=df_reg)
-
-stargazer::stargazer(just_sex, w_controls, w_comp_inter, w_qual_inter, 
-                     style = "ajps", type="latex")
-
-just_sex2 <- lm(APP_2_amt_1 ~ app2_fem, data=df_reg)
-w_controls2 <- lm(APP_2_amt_1 ~ app2_fem + app2_exc + applicant_2_high_comp + STATE_amt_1, 
-                 data=df_reg)
-w_comp_inter2 <- lm(APP_2_amt_1 ~ app2_fem*applicant_2_high_comp + app2_exc + STATE_amt_1,
-                   data=df_reg)
-w_qual_inter2 <- lm(APP_2_amt_1 ~ app2_fem*app2_exc + applicant_2_high_comp + STATE_amt_1,
-                   data=df_reg)
-
-stargazer::stargazer(just_sex2, w_controls2, w_comp_inter2, w_qual_inter2, 
-                     style = "ajps", type="text")
