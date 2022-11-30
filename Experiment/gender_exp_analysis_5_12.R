@@ -204,7 +204,8 @@ summary(for_fig2$amount)
 ggplot(for_fig2, aes(x=person, y=amount, color = applicant_2_rate)) + 
   geom_point(aes(shape = person)) +
   facet_wrap(vars(applicant_2_name)) +
-  geom_errorbar(aes(ymin =amount - 1.96*se, ymax=amount + 1.96*se)) +
+  geom_errorbar(aes(ymin =amount - 1.96*se, 
+                    ymax=amount + 1.96*se,  width = 0.3)) +
   theme_classic() +
   scale_color_viridis(discrete = TRUE) +
   scale_shape_discrete(labels=c('Baseline', 'Treatment', 'State')) +
