@@ -113,13 +113,16 @@ df_reg <- gender %>%
                            "None" = 3)) %>%
   subset(app2_fem < 2)
 
-p <- lm(STATE_amt_1 ~ app2_fem + app2_exc + ideo5, data = df_reg)
-summary(p)
+p <- lm(STATE_amt_1 ~ ideo5 + app2_fem + app2_exc + 
+          applicant_2_high_comp, 
+        data = df_reg)
+#summary(p)
 
-stargazer::stargazer(p, type="latex", style = "ajps",
-                     covariate.labels = c("Treatment Female", 
+stargazer::stargazer(p, type="latex", style = "apsr",
+                     covariate.labels = c("Ideology", 
+                                          "Treatment Female", 
                                           "Rated Excellent",
-                                          "Ideology"),
+                                          "High Competence"),
                      dep.var.labels = c("Dollars Given to State"))
 
 
