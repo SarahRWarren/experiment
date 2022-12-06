@@ -97,6 +97,31 @@ ggplot(for_fig, aes(x=ideo5, y=av_amount)) +
   labs(x = "Ideology",
        y = "Average Dollars Awarded")
 
+##reg for amount given to state
+df_reg <- gender %>%
+  select(amt_diff, applicant_2_rate, applicant_2_high_comp, 
+         applicant_2_sex, ideo5,
+         applicant_2_name, APP_1_amt_1, APP_2_amt_1, STATE_amt_1) %>%
+  mutate(app2_exc = as.numeric(applicant_2_rate),
+         app2_exc = recode(applicant_2_rate,
+                           "Excellent" = 1,
+                           "Poor" = 0)) %>%
+  mutate(app2_fem = as.numeric(applicant_2_sex),
+         app2_fem = recode(applicant_2_sex,
+                           "Female" = 1,
+                           "Male" = 0,
+                           "None" = 3)) %>%
+  subset(app2_fem < 2)
+
+p <- lm(STATE_amt_1 ~ app2_fem + app2_exc + ideo5, data = df_reg)
+summary(p)
+
+stargazer::stargazer(p, type="latex", style = "ajps",
+                     covariate.labels = c("Treatment Female", 
+                                          "Rated Excellent",
+                                          "Ideology"),
+                     dep.var.labels = c("Dollars Given to State"))
+
 
 
 

@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7380 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: draft.11.30.22.aux
+The style file: apsr.bst
+Database file #1: womenref.bib
+You've used 40 entries,
+            2874 wiz_defined-function locations,
+            894 strings with 12146 characters,
+and the built_in function-call counts, 178019 in all, are:
+= -- 29255
+> -- 2105
+< -- 0
++ -- 13806
+- -- 741
+* -- 15339
+:= -- 35528
+add.period$ -- 160
+call.type$ -- 40
+change.case$ -- 521
+chr.to.int$ -- 40
+cite$ -- 40
+duplicate$ -- 603
+empty$ -- 1366
+format.name$ -- 780
+if$ -- 31980
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 42
+newline$ -- 177
+num.names$ -- 467
+pop$ -- 132
+preamble$ -- 1
+purify$ -- 600
+quote$ -- 0
+skip$ -- 523
+stack$ -- 0
+substring$ -- 41449
+swap$ -- 84
+text.length$ -- 560
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 154
+warning$ -- 0
+while$ -- 957
+width$ -- 0
+write$ -- 564
