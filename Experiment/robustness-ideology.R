@@ -63,8 +63,20 @@ gender <- df %>%
                                   "No Name" = "None")) %>%
   mutate(applicant_1_rate = "Excellent") %>%
   mutate(applicant_1_name = "Sandra") %>%
-  mutate(applicant_1_char = "Sandra (Exc)")
+  mutate(applicant_1_char = "Sandra (Exc)") %>%
+  mutate(ideo5_char = as.character(ideo5),
+         ideo5_char = recode(ideo5,
+                                  "1" = "Very Liberal",
+                                  "2" = "Liberal",
+                                  "3" = "Moderate",
+                                  "4" = "Conservative",
+                                  "5" = "Very Conservative"))
 #  write_csv(gender, "Data/gender_df.csv")
+
+gender$ideo5_char <- factor(gender$ideo5_char, 
+                            levels=c('Very Conservative', 'Conservative',
+                                     'Moderate', 'Liberal', 'Very Liberal'))
+
 
 gender <- gender%>%
   group_by(applicant2_treat)%>%
@@ -76,7 +88,7 @@ gender$amt_diff <- (gender$APP_2_amt_1 - gender$APP_1_amt_1)
 
 
 for_fig <- gender %>%
-  select(ideo5, APP_1_amt_1, APP_2_amt_1, STATE_amt_1, 
+  select(ideo5, ideo5_char, APP_1_amt_1, APP_2_amt_1, STATE_amt_1, 
          applicant_2_name, applicant_2_rate, applicant_2_sex)%>%
   pivot_longer(APP_1_amt_1:STATE_amt_1, names_to = "person", 
                values_to = "amount")
@@ -89,13 +101,41 @@ for_fig <- for_fig %>%
   ungroup() %>%
   filter(ideo5 < 6) #drop no-name
 
-ggplot(for_fig, aes(x=ideo5, y=av_amount)) + 
+ggplot(for_fig, aes(x=ideo5_char, y=av_amount)) + 
   geom_point() +
   theme_bw() +
-  facet_wrap(vars(person)) +
+  facet_wrap(vars(applicant_2_rate, applicant_2_name))+
   geom_errorbar(aes(ymin =av_amount-1.96*se, ymax=av_amount+1.96*se)) +
   labs(x = "Ideology",
        y = "Average Dollars Awarded")
+
+
+#Exc Misty to Baseline <- one group
+excmist <- gender %>%
+  select(applicant2_treat, APP_1_amt_1, APP_2_amt_1, ideo5_char, amt_diff) %>%
+  filter(applicant2_treat == 1)
+
+excmist$sandra <- excmist$APP_1_amt_1
+excmist$emist <- excmist$APP_2_amt_1
+
+library(rstatix)
+library(ggpubr)
+
+rob_res_1 <- t_test(data = excmist, amt_diff ~ ideo5_char) %>%
+  select(group1, group2, n1, n2, p)
+
+stargazer::stargazer(rob_res_1, type = "latex", summary=F, 
+          title="Ideological Differences in Excellent Misty Treatment")
+
+#Exc James to Baseline
+excjames <- gender %>%
+  select(applicant2_treat, APP_1_amt_1, APP_2_amt_1, amt_diff, ideo5_char) %>%
+  filter(applicant2_treat == 3)
+
+rob_res_2 <- t_test(data = excjames, amt_diff ~ ideo5_char)%>%
+  select(group1, group2, n1, n2, p)
+stargazer::stargazer(rob_res_2, type = "latex", summary=F, 
+                     title="Ideological Differences in Excellent James Treatment")
 
 ##reg for amount given to state
 df_reg <- gender %>%
@@ -124,6 +164,7 @@ stargazer::stargazer(p, type="latex", style = "apsr",
                                           "Rated Excellent",
                                           "High Competence"),
                      dep.var.labels = c("Dollars Given to State"))
+ggsave("Paper/figs/robust-results-R-gender.png", height = 6, width = 8)
 
 
 

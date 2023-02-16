@@ -77,7 +77,7 @@ gender <- gender%>%
 
 for_fig2 <- gender %>%
   select(applicant2_treat, app_1_amt_av, app_2_amt_av, STATE_amt_av, 
-         applicant_2_name, applicant_2_rate, applicant_2_sex)%>%
+         applicant_2_name, applicant_2_rate, amt_diff, applicant_2_sex)%>%
   pivot_longer(app_1_amt_av:STATE_amt_av, names_to = "person", 
                values_to = "amount")
 
@@ -216,7 +216,7 @@ ggplot(for_fig2, aes(x=person, y=amount, color = applicant_2_rate)) +
        y = "Average Dollars Awarded",
        shape = "Recipient",
        color = "Quality of Treatment Name")
-  ggsave("figs/general-results-name.png", height = 6, width = 8)
+  ggsave("Paper/figs/general-results-name.png", height = 6, width = 8)
   
 
 ##scatter
@@ -238,4 +238,57 @@ ggplot(gender, aes(x=APP_1_amt_1, y=APP_2_amt_1)) + theme_bw() +
        x = " $$ Given to Sandra (Exc)",
        y = "$$ Given to Treatment",
        color = "Treatment")
-ggsave("figs/dollars-given-by-treatment-condition.png")
+ggsave("Paper/figs/dollars-given-by-treatment-condition.png", 
+       height = 4, width = 4)
+
+exc <- for_fig2 %>%
+  subset(applicant_2_rate == "Excellent" & person == "app_2_amt_av") %>%
+  mutate(diff_av = mean(amt_diff)) %>%
+  select(diff_av, person, applicant_2_name) %>%
+  unique()
+
+library(ggpubr)
+
+ggplot(exc, aes(x=applicant_2_name, y=diff_av)) + 
+  geom_col(fill="grey") +
+  scale_y_continuous(limits = c(-25,0)) +
+  theme_bw() +
+  labs(title = "Differences in Excellent Applicants From Baseline",
+       x = "",
+       y = "Average Difference in $$ From Baseline") +
+  geom_text(x=1, y=-2, label="$-22.86, \n p=0.014**") +
+  geom_text(x=2, y=-2, label="$-12.11, \n p=0.141") +
+  geom_text(x=3, y=-2, label="$-19.38, \n p=0.000***")
+ggsave("Paper/figs/diff-in-exc-apps-from-baseline_conf.png", 
+       height = 4, width = 6)
+
+qual <- for_fig2 %>%
+  select(applicant_2_name, applicant_2_rate, person, amount) %>%
+  subset(person == "app_2_amt_av")
+
+excellent <- qual %>%
+  subset(applicant_2_rate == "Excellent") %>%
+  group_by(applicant_2_name) %>%
+  summarize(av_exc = mean(amount))
+
+poor <- qual %>%
+  subset(applicant_2_rate == "Poor") %>%
+  group_by(applicant_2_name) %>%
+  summarize(av_poor = mean(amount))
+
+qual2 <- left_join(excellent, poor)
+qual2$diff <- (qual2$av_exc - qual2$av_poor)
+
+ggplot(qual2, aes(x=applicant_2_name, y=diff)) + 
+  geom_col(fill="grey") +
+  scale_y_continuous(limits = c(0, 35)) +
+  theme_bw() +
+  labs(title = "Excellent vs Poor Rated Applicants",
+       x = "",
+       y = "Average Difference in $$ From Poor Condition") +
+  geom_text(x=1, y=4, label="$18.61, \n p=0.256") +
+  geom_text(x=2, y=4, label="$31.40, \n p=0.044**") +
+  geom_text(x=3, y=4, label="$16.28, \n p=0.351")
+ggsave("Paper/figs/diff-in-exc-apps-from-poor_conf.png", 
+       height = 4, width = 6)
+

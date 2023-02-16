@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7380 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: warren-welfare-gender-1-27.aux
+The style file: apsr.bst
+Database file #1: womenref.bib
+You've used 47 entries,
+            2874 wiz_defined-function locations,
+            934 strings with 13677 characters,
+and the built_in function-call counts, 203488 in all, are:
+= -- 33422
+> -- 2351
+< -- 0
++ -- 15726
+- -- 832
+* -- 17496
+:= -- 40669
+add.period$ -- 188
+call.type$ -- 47
+change.case$ -- 612
+chr.to.int$ -- 47
+cite$ -- 47
+duplicate$ -- 710
+empty$ -- 1600
+format.name$ -- 887
+if$ -- 36544
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 51
+newline$ -- 207
+num.names$ -- 539
+pop$ -- 160
+preamble$ -- 1
+purify$ -- 705
+quote$ -- 0
+skip$ -- 609
+stack$ -- 0
+substring$ -- 47324
+swap$ -- 96
+text.length$ -- 658
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 178
+warning$ -- 0
+while$ -- 1114
+width$ -- 0
+write$ -- 663

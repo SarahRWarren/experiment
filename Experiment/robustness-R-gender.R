@@ -79,6 +79,34 @@ gender <- gender%>%
   subset(applicant2_treat < 7)
 gender$amt_diff <- (gender$APP_2_amt_1 - gender$APP_1_amt_1)
 
+##t-tests
+excmist <- gender %>%
+  select(applicant2_treat, APP_1_amt_1, APP_2_amt_1, amt_diff, gender_char) %>%
+  filter(applicant2_treat == 1)
+
+excmist$sandra <- excmist$APP_1_amt_1
+excmist$emist <- excmist$APP_2_amt_1
+
+rob_res_1 <- t_test(data = excmist, amt_diff ~ gender_char)%>%
+  select(group1, group2, n1, n2, p) %>%
+  mutate(treatment_name = "Excellent Misty")
+
+#Exc James to Baseline
+excjames <- gender %>%
+  select(applicant2_treat, APP_1_amt_1, APP_2_amt_1, amt_diff, gender_char) %>%
+  filter(applicant2_treat == 3)
+
+rob_res_2 <- t_test(data = excjames, amt_diff ~ gender_char)%>%
+  select(group1, group2, n1, n2, p) %>%
+  mutate(treatment_name = "Excellent James")
+
+results <- full_join(rob_res_1, rob_res_2)
+stargazer::stargazer(results, type = "latex", summary=F, 
+                     title="Gender Differences in Allocations")
+
+
+
+
 
 for_fig <- gender %>%
   select(gender, gender_char, APP_1_amt_1, APP_2_amt_1, STATE_amt_1, 
@@ -108,4 +136,6 @@ ggplot(for_fig, aes(x=person, y=av_amount, color = gender_char)) +
        y = "Average Dollars Awarded",
        shape = "Recipient",
        color = "Respondent Gender")
-ggsave("figs/robust-results-R-gender.png", height = 6, width = 8)
+ggsave("Paper/figs/robust-results-R-gender.png", height = 6, width = 8)
+
+
