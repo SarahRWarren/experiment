@@ -23,6 +23,8 @@
 \usepackage{float}
 \usepackage{appendix}
 \usepackage{titletoc}
+\usepackage{rotating}
+
 
 
 \usepackage[bookmarks=false,colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black]{hyperref}
@@ -48,7 +50,7 @@
 \title{Who Benefits? Experimental Evidence of Gender Differences in Aid Allocations\thanks{The experiment reported in this paper is preregistered at EGAP Registry (https://osf.io/u5wxg/). This research was reviewed and approved by the Florida State University Institutional Review Board. All errors remain the author's own responsibility.}}
 
 
-\date{PRELIMINARY DRAFT - PLEASE DO NOT CIRCULATE}
+\date{Draft as of: 2/22/2023}
 
 \begin{document}
 \maketitle
@@ -56,7 +58,9 @@
 
 
 \begin{abstract}
-I'll write a good one soon.
+While past work clearly demonstrates that women are rewarded less compared to men in the labor market, how do they fare when taking up government aid? Some literature suggests that women taking up aid will continue to be evaluated unfairly, because they are not perceived as having equal income-potential to men; other work suggests that benevolent sexist attitudes may disproportionately reward female applicants relative to similarly-situated men. Given the competing intuitions behind rewarding or punishing men seeking welfare, an experimental test of each hypothesis is presented. I find that, on average, male applicants earn less than female applicants with identical needs. Further, I find the amount awarded to women varies conditional on being rated a ``Poor” or ``Excellent” worker by a third party, while there is no difference in the amount awarded to men who are rated ``Poor” workers compared to men who are rated ``Excellent” workers. Thus, women’s advantage over men applicants extends only so far as women are perceived as deserving and hard workers. The totality of these results suggest that people are more inclined to help poor women rather than poor men, but only when the quality of women applicants is validated by an external source. I bolster these findings by providing evidence that neither respondent-level ideology nor gender drives these results.
+
+
 \end{abstract}
 %\vspace{0.5cm}
 
@@ -67,23 +71,21 @@ I'll write a good one soon.
 \pagenumbering{arabic}
 \begin{doublespace}
 
-The question of ``who should get what, when, and how?" is central to the study of politics \citep{lasswell2018politics}. Understanding this question in a democratic society requires a robust understanding of the public's answers to these questions and public values. Strategic politicians will not advance redistributive policies for which they believe the public will punish them \citep{fearon1999electoral}. Even outside of the electoral connection, street level bureaucrats are swayed by public opinion. Across many policy areas, including Medicaid \citep{weissert1994beyond}, labor \citep{schmidt2002politicization}, disability insurance \citep{keiser1999state}, food stamps \citep{kogan_welfare_2021}, and immigration \citep{lewis2013some}, street-level bureaucrats use their discretion to align realized policy outcomes with personal and community values, even when their formal responsibility is to implement otherwise identical statutory language. Thus, it is critical that scholars understand how the American public thinks about government aid and its recipients, as scholarship has shown that attitudes about public policies are closely related to attitudes about the beneficiaries of those policies \citep{nelson1996issue, rabinowitz2009white, fossati2018wants}.
+The question of ``who should get what, when, and how?" is central to the study of politics \citep{lasswell2018politics}. Understanding this question in a democratic society requires a robust understanding of the public’s answers to these questions and how their values shape their responses. Strategic politicians will not advance redistributive policies for which they believe the public will punish them \citep{fearon1999electoral}. Even outside of the electoral connection, street level bureaucrats are swayed by public opinion. Across many policy areas, including Medicaid \citep{weissert1994beyond}, labor \citep{schmidt2002politicization}, disability insurance \citep{keiser1999state}, food stamps \citep{kogan_welfare_2021}, and immigration \citep{lewis2013some}, street-level bureaucrats use their discretion to align realized policy outcomes with personal and community values, even when their formal responsibility is to implement otherwise identical statutory language. Thus, it is critical that scholars understand how the American public thinks about government aid and its recipients, as scholarship has shown that attitudes about public policies are closely related to attitudes about the beneficiaries of those policies \citep{nelson1996issue, rabinowitz2009white, fossati2018wants}.
 
 To this end, past literature has shown that welfare attitudes are racialized \citep{desante_working_2013, gilliam_welfare_1999} and programs seen as disproportionately servicing black Americans are viewed significantly less favorably than those servicing white Americans \citep{winter_beyond_2006}. Yet remarkably little is known about how gender attitudes influence and affect attitudes toward aid recipients. Indeed, much work on gendered attitudes toward welfare recipients considers only attitudes toward men \citep{petersen2012deserves, aaroe2014crowding, willrich2000home} or only attitudes toward women \citep{monnat2010color, desante_working_2013, hayes_2020}, diminishing scholars' ability to make clear, causally identified statements about the role of gender in welfare attitudes.
 
 While women receive different treatment than comparable men in everything from applying to jobs \citep{neumark_sex_1996, goldin_orchestrating_2000, quadlin_market} to running for office \citep{hassell_partys_2019, clayton_how_2020} to the price they pay for basic household goods in some countries \citep{betz_womens_2021} to their salaries \citep{castillo_gender_2013, mandel_up_2013}, scholarly intuition is unclear how gender differences in these domains translates into perceptions of a public aid applicant's deservingness of aid. Meanwhile, qualitative scholarship suggests public tends to fall on the side of protecting and providing for women in need and shunning men who fail to achieve the masculine ideal of breadwinning \cite{willrich2000home}.
 
-Compounding this, Americans have long believed people ``ought to take care of their personal problems by themselves” without relying on the government for aid \citep{sniderman_coping_1977}. Indeed, welfare has long been considered a ``women's issue" (CITES) and welfare policies are favored by women in politics (). The combined weight of these attitudes may contribute to the hostility for men receiving public benefits: such policies help those who should be helping themselves \citep{bobocel_justice-based_1998, katz_racial_1988, sniderman_symbolic_1986, sniderman_beyond_1996, mclosky_ethos}.
+Compounding this, Americans value hard work and have long believed people ``ought to take care of their personal problems by themselves” without relying on the government for aid \citep{sniderman_coping_1977}. Yet these values tend to skew toward valuing men's hard work and devaluing men who cannot or do not work \citep{willrich2000home}. Indeed, modern social welfare is often considered a ``women's issue" and welfare policies are favored by women in politics \citep{krook2012all, greene2016diverse}. The combined weight of these attitudes may contribute to public hostility for men receiving public benefits: such policies help those who should be helping themselves \citep{bobocel_justice-based_1998, katz_racial_1988, sniderman_symbolic_1986, sniderman_beyond_1996, mclosky_ethos}.
 
-In this paper, I fill these gaps by leveraging an original survey experiment to causally identify the effect of gender on perceived deservingness. My analyses show that, when men and women are put in direct competition for scarce public resources, gender-based prejudice interacts with American perceptions of work ethic to amplify existing stereotypes about men and women. I find that, on average, male applicants earn less than female applicants with identical needs. Further, I find the amount awarded to women varies conditional on being rated a ``Poor” or ``Excellent” worker by a third party, while there is no difference in the amount awarded to men who are rated ``Poor” workers compared to men who are rated ``Excellent” workers. Thus, women’s advantage over men applicants extends only so far as women are perceived as ``deserving.” The totality of these results suggest that people are more inclined to help poor women rather than poor men, but only deserving women, when the quality of women applicants is validated by an external source. This research provides evidence toward benevolent sexism, in which women are viewed as weak and in need of extra care \citep{glick_hostile_1997, glick_ambivalent_2001}. It additionally informs our understanding of gender differences in considerations of the deserving poor and the consequences of these considerations on bureaucratic responsiveness.
+In this paper, I fill these gaps by leveraging an original survey experiment to causally identify the effect of gender on perceived deservingness. My analyses show that, when men and women are put in direct competition for scarce public resources, gender-based prejudice interacts with American perceptions of work ethic to amplify existing stereotypes about men and women. I find that, on average, male applicants earn less than female applicants with identical needs. Further, I find the amount awarded to women varies conditional on being rated a ``Poor” or ``Excellent” worker by a third party, while there is no difference in the amount awarded to men who are rated ``Poor” workers compared to men who are rated ``Excellent” workers. Thus, women’s advantage over men applicants extends only so far as women are perceived as ``deserving.” The totality of these results suggest that people are more inclined to help poor women rather than poor men, but only deserving women, when the quality of women applicants is validated by an external source. This research provides evidence toward benevolent sexism, in which women are viewed as weak and in need of extra care \citep{glick_hostile_1997, glick_ambivalent_2001}.
 
-The rest of this paper proceeds as follows...
+The rest of this paper proceeds as follows. Section I outlines my theory and preregistered hypotheses. Section II details the experimental design. Section III presents the main results. Section IV presents exploratory analyses to confirm that the mechanism driving my results is gender differences in the assigned treatment, rather than respondent covariates. Section V concludes.
 \\
 
 \section*{Theory}
-The dimension that has characterized past work and public debate on welfare is deservingness \citep{schneider_social_1993,  van2017social, gilens_why_2000, petersen2012social, petersen2012deserves, aaroe2014crowding}. The so-called ``deserving poor” those whose personal financial circumstances have been devastated by structural or macroeconomic forces beyond the individual’s control, rather than personal qualities of dependence and laziness. They are docile and appropriately grateful for the aid they receive, and have or are exerting costly effort to ``earn" assistance \citep{van_oorschot_who_nodate}. A limited body of empirical work considers how gender might affect perceptions of deservingness \citep{monnat2010color, monnat2010toward}. Women, especially mothers, seeking aid are more likely to be seen as victimized, needy, pleasant, and docile \citep{glick_hostile_1997, glick_ambivalent_2001}, whereas men seeking aid have historically been perceived as lazy ``home slackers" \citep{willrich2000home}, in control of their poverty and having not earned aid.
-
-Given this, I hypothesize:\footnote{All hypotheses and components of the research design were preregistered. My preregistration can be found at: https://osf.io/u5wxg/}
+The dimension that has characterized past work and public debate on welfare is deservingness \citep{schneider_social_1993,  van2017social, gilens_why_2000, petersen2012social, petersen2012deserves, aaroe2014crowding}. The so-called ``deserving poor” those whose personal financial circumstances have been devastated by structural or macroeconomic forces beyond the individual’s control, rather than personal qualities of dependence and laziness. They are docile and appropriately grateful for the aid they receive, and have or are exerting costly effort to ``earn" assistance \citep{van_oorschot_who_nodate}. A limited body of empirical work considers how gender might affect perceptions of deservingness \citep{monnat2010color, monnat2010toward}. Women, especially mothers, seeking aid are more likely to be seen as victimized, needy, pleasant, and docile \citep{glick_hostile_1997, glick_ambivalent_2001}, whereas men seeking aid have historically been perceived as lazy ``home slackers" \citep{willrich2000home}, in control of their poverty and having not earned aid. Given this, I hypothesize:\footnote{All hypotheses and components of the research design were preregistered. My preregistration can be found at: https://osf.io/u5wxg/}
 
 \begin{hypothesis} \label{hyp:first}
 	On average, male applicants will be awarded less than female applicants.
@@ -97,7 +99,7 @@ A key dimension on the deservingness literature is applicant quality \citep{pete
 \end{hypothesis}
 
 
-Deservingness might also be signaled by external factors, such as a college degree, a robust employment record, or participation in a certificate or job training program. If individuals truly prioritize giving aid to good workers whose personal financial circumstances were devastated by forces outside of their control and who they feel have ``earned" assistance, then high-quality workers should be awarded more than low-quality workers. However, evidence suggests that external or objective proof of women’s capabilities may be valuable resources in offsetting negative perceptions of women as workers, but offer minimal or no returns for men \citep{abel_value_2020, dadgar_labor_2015, jepsen_labor-market_2014}. I therefore hypothesize:
+Deservingness might also be signaled by external factors, such as a college degree, a robust employment record, or participation in a certificate or job training program. If individuals truly prioritize giving aid to good workers whose personal financial circumstances were devastated by forces outside of their control and who they feel have ``earned" assistance, then high-quality workers should be awarded more than low-quality workers. However, evidence suggests that these kinds of quality evaluations are avenues through which discriminatory attitudes are expressed. For example, \cite{gilens_why_2000} and \cite{desante_working_2013} show that worker quality-based perceptions of deservingness are racialized (e.g. avenues through which respondents express anti-black bias). While there is little evidence regarding the \textit{feminization} of worker quality evaluations, interdisciplinary empirical evidence suggests that external or objective proof of women’s capabilities may be valuable resources in offsetting negative perceptions of women as workers, but offer minimal or no returns for men \citep{abel_value_2020, dadgar_labor_2015, jepsen_labor-market_2014}. I therefore hypothesize:
 
 
 \begin{hypothesis} \label{hyp:thirda}
@@ -110,26 +112,28 @@ Deservingness might also be signaled by external factors, such as a college degr
 
 
 \section*{Experimental Design and Data}
-To test how gender, worker quality, and perceived work ethic shape attitudes toward welfare recipients and the amounts they are awarded, I conducted a survey experiment in which participants were asked to budget money to different pairs of applicants for state assistance subject to a budget constraint. I diverge from past work in which welfare attitudes are elicited in isolation or without budgetary constraints \citep{rabinowitz2009white, aaroe2014crowding, sniderman1993scar, monnat2010color}. Asking participants to make a costly decision is methodologically preferable, because it mitigates concerns about acquiescence bias and is more analagous to real-world decisions. That is, given that the government cannot satisfy every need, who should it take care of first?
+To test how gender, worker quality, and perceived work ethic shape attitudes toward welfare recipients and the amounts they are awarded, I conducted a survey experiment in which participants were asked to budget money to different pairs of applicants for state assistance subject to a budget constraint. I diverge from past work in which welfare attitudes are elicited in isolation or without budgetary constraints \citep{rabinowitz2009white, aaroe2014crowding, sniderman1993scar, monnat2010color}. Asking participants to make a costly decision is methodologically preferable, because it mitigates concerns about acquiescence bias and is more analogous to real-world decisions in which achieving benefits in one domain may come with costs in another. For example, the 2020 ANES asks respondents whether they think the government should increase spending on services like healthcare and education ``even if it means an increase in spending." That is, given that the government cannot satisfy every need, who should it take care of first?
 
-Following DeSante (2013), I use hand-redacted welfare applications to manipulate targets’ for assistance sex, perceived competence, and objective work-quality rating (Figure \ref{characteristics}). To manipulate objective quality, each applicant is randomly assigned a rating of ``Excellent” or ``Poor." To manipulate sex and perceived competence, I use two male and two female names from Hayes and Mitchell’s (2020) name-characteristics dataset: Sandra, James, Misty, and Sammie.\footnote{To create the dataset, the authors obtained a list of given names among people born in the United States between the years 1955 and 1990 from the U.S. Social Security Administration (SSA). To identify the gender of the names, they used information on sex included in the SSA data.} These names were specifically selected to minimize the likelihood that factors other than sex, objective, and perceived work ethic would affect treatment. Names are used rather than more overt cues to minimize demand effects \citep{quidt_experimenter_2019}. To mitigate concerns about the effects of race and the racialization of welfare confounding results, all four names chosen were coded as racially distinct white names in the \cite{hayes_2020} names dataset. 
+Following \cite{desante_working_2013}, I use hand-redacted welfare applications to manipulate targets’ for assistance sex, perceived competence, and objective work-quality rating (Figure \ref{characteristics}). To manipulate objective quality, each applicant is randomly assigned a rating of ``Excellent” or ``Poor." To manipulate sex and perceived competence, I use two male and two female names from Hayes and Mitchell’s (2020) name-characteristics dataset: Sandra, James, Misty, and Sammie.\footnote{To create the dataset, the authors obtained a list of given names among people born in the United States between the years 1955 and 1990 from the U.S. Social Security Administration (SSA). To identify the gender of the names, they used information on sex included in the SSA data.} These names were specifically selected to minimize the likelihood that factors other than sex, objective, and perceived work ethic would affect treatment. Names are used rather than more overt cues to minimize demand effects \citep{quidt_experimenter_2019}. To mitigate concerns about the effects of race and the racialization of welfare confounding results, all four names chosen were coded as racially distinct white names in the \cite{hayes_2020} names dataset. 
 
-These names are matched on characteristics that Americans report as relevant considerations when considering welfare support \citep{bobocel_justice-based_1998, katz_racial_1988, sniderman_symbolic_1986, sniderman_beyond_1996, mclosky_ethos}. Sandra and James are rated highly in professionalism, competence, and work ethic, while Sammie and Misty are rated lower in all three characteristics. All names are comparable in estimates of whiteness, honesty, and likeability. Figure \ref{characteristics} below shows the complete breakdown of name-characteristics.
+These names are matched on characteristics that Americans report as relevant considerations when considering welfare support \citep{bobocel_justice-based_1998, katz_racial_1988, sniderman_symbolic_1986, sniderman_beyond_1996, mclosky_ethos}. Sandra and James are rated highly in professionalism, competence, and work ethic, while Sammie and Misty are rated lower in all three characteristics. All names are comparable in estimates of whiteness, honesty, likeability, violence, aggression, and partisanship. Figure \ref{characteristics} below shows the complete breakdown of name-characteristics.
 
 %%NAME CHARACTERISTICS FIGURE HERE
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=1]{figs/characteristics.png}
+	\includegraphics[scale=.75]{figs/name-char.png}
 	{\singlespacing
-		\parbox{0.78\textwidth}{\scriptsize%\vspace{-0.25cm}
-			Notes: Explain the figure here
+		\parbox{0.75\textwidth}{\scriptsize%\vspace{-0.25cm}
+			Notes: This figure shows the point estimates and confidence intervals of the estimated valence characteristics of the four chosen treatment names chosen from Hayes and Mitchell (2020). Higher point estimates correspond to higher levels of that value (e.g. a score of 5 in ``professional" corresponds to greater perceived professionalism than a score of 4).
 	}}
 	\caption{Differences in Valence Characteristics Between Treatment Names}
 	\label{characteristics}
 \end{figure}
 
 
-Subjects are given a budgeting task in which they are asked to allocate \$1,500 to two applicants for federal assistance, each of whom has a state-determined need of \$900. Respondents may also choose to give some or all of the funds to ``offset the state deficit.” Participants were given significant discretion in how aid was awarded, constrained only by a budgetary constraint and the inability to give an applicant more than their assessed need. Given the budget constraint—both applicants’ full need cannot be met—I use the amount awarded to Applicant 1, Applicant 2, and the Government as a direct estimate of an applicant’s deservingness. These allocations are my main variables of interest. Everything else about the applicants remains identical, except for a worker quality assessment of Excellent or Poor and their name, which cues both sex (male or female) and competence (high or low). Given this, if an applicant receives a different allocation across treatments, we can infer that this difference is due to experimental manipulation. As the applicant’s characteristics were manipulated via random assignment, any difference in the relative importance respondents place on fiscal responsibility—illustrated by giving more to offset the budget deficit—can also be traced back to the experimental treatment. Having the option to allocate dollars to a non-aid resource (in this case, the budget deficit) allows me to separate gender-neutral values from gendered discrimination. This deficit option also allows for individuals to take a principled position, a socially desirable and available option, to decide that the money would be better spent in some other way.
+Subjects are given a budgeting task in which they are asked to allocate \$1,500 to two applicants for federal assistance, each of whom has a state-determined need of \$900. Respondents may also choose to give some or all of the funds to ``offset the state deficit.” Participants were given significant discretion in how aid was awarded, constrained only by a budgetary constraint and the inability to give an applicant more than their assessed need. Given the budget constraint—both applicants’ full need cannot be met—I use the amount awarded to Applicant 1, Applicant 2, and the Government as a direct estimate of an applicant’s deservingness. These allocations are my main variables of interest. Everything else about the applicants remains identical, except for a worker quality assessment of Excellent or Poor and their name, which cues both sex (male or female) and competence (high or low). Given this, if an applicant receives a different allocation across treatments, we can infer that this difference is due to experimental manipulation. As the applicant’s characteristics were manipulated via random assignment, any difference in the relative importance respondents place on fiscal responsibility—illustrated by giving more to offset the budget deficit—can also be traced back to the experimental treatment. 
+
+Having the option to allocate dollars to a non-aid resource (in this case, the budget deficit) allows me to separate gender-neutral values from gendered discrimination. This deficit option also allows for individuals to take a principled position, a socially desirable and available option, to decide that the money would be better spent in some other way. While it may be the case that some respondents chose to allocate dollars to the state out of principled objection, whereas others believe that deficit reduction is simply a higher priority, both are a function of gender-neutral policy positions and should have no bearing on the \textit{difference between} the amounts awarded to the baseline and treatment applicants.
 
 %%SAMPLE APPLICATIONS FIGURE HERE
 \begin{figure}[h!]
@@ -140,7 +144,7 @@ Subjects are given a budgeting task in which they are asked to allocate \$1,500 
 \end{figure}
 
 
-In order to isolate the effects of sex versus the traits people ascribe to different names, I fielded a survey experiment with YouGov (n=1880) in April 2022. Respondents viewed two applications identical in appearance to the original experiment. Rather than randomizing both applications, all respondents viewed the same baseline application of ``Sandra” who was rated as ``Excellent” compared to a second application. I used a 2x2x2 factorial design for this second application, randomizing sex (male/female), competence (high/low), and quality assessment (excellent/poor) of the second application, using the names James, Misty, and Sammie as my cue for sex and competence. Respondents were then asked to allocate funding to the two applicants or to offset the state budgetary deficit.
+In order to isolate the effects of sex versus the traits people ascribe to different names, I fielded a survey experiment with YouGov (n=1880) in April 2022. The sample is a mixture of a nationally representative sample with a low socio-economic status oversample. Due to this, in interpreting my results, I focus on effect direction, rather than magnitude, though I report point estimates in all cases \citep{horton2011online}.\footnote{I present the same analysis conducted on the nationally representative and low-SES subsamples in Appendix A.} Respondents viewed two applications identical in appearance to the original experiment. Rather than randomizing both applications, all respondents viewed the same baseline application of ``Sandra” who was rated as ``Excellent” compared to a second application. I used a 2x2x2 factorial design for this second application, randomizing sex (male/female), competence (high/low), and quality assessment (excellent/poor) of the second application, using the names James, Misty, and Sammie as my cue for sex and competence. Respondents were then asked to allocate funding to the two applicants or to offset the state budgetary deficit.
 
 \section*{Experimental Results}
 When men and women are put in direct competition for scarce resources, how do women fare compared to similarly-situated men? How does perceived competence and external quality ratings affect this relationship? Figure \ref{results-main} presents the main results of the experiment by treatment name, with color denoting the quality rating (Excellent/Poor) of the treatment name, and point-shape denoting the amount given to each recipient. Recall that the baseline condition is an applicant named Sandra, a high-competence name, who is rated as an ``Excellent” quality worker.
@@ -150,30 +154,33 @@ When men and women are put in direct competition for scarce resources, how do wo
 	\centering
 	\includegraphics[scale=.8]{figs/general-results-name.png}
 	{\singlespacing
-		\parbox{0.78\textwidth}{\scriptsize%\vspace{-0.25cm}
-			Notes: Explain the figure here
+		\parbox{0.75\textwidth}{\scriptsize%\vspace{-0.25cm}
+			Notes: This figure shows the results for each treatment condition. The y-axis is the average dollars awarded to each possible recipient (the baseline, the treatment, or the state). The x-axis is each possible recipient (the baseline, the treatment, or the state). This allows us to compare the treatment to the baseline in each condition, as well as the treatment name to itself when the quality rating is manipulated. Error bars are 95\% confidence intervals.
 	}}
 	\caption{Gender Differences in Aid Allocated by Treatment Name}
 	\label{results-main}
 \end{figure}
 
-H1 predicts that, on average, male applicants will be awarded less than female applicants. The first panel of Figure \ref{results-main} demonstrates that, when she is paired with a high-competence, ``Excellent” male name, James, Sandra is awarded significantly more on average (\$642.06 vs. \$619.20, p = 0.014). Excellent Sandra also earns more on average than Sammie, a low-competence name, when he is rated ``Excellent” (\$635.98 vs \$616.60, p=0.000). However, there is also no significant difference between Excellent Sandra and Excellent Misty (\$655.31 vs \$643.20, p=0.141). These results are consistent with H1, in that Excellent Misty earns no less than Excellent Sandra, while Excellent James and Excellent Sammie earn substantively and significantly less than the baseline.
+H1 predicts that, on average, male applicants will be awarded less than female applicants. The first panel of Figure \ref{results-main} demonstrates that, when she is paired with a high-competence, ``Excellent” male name, James, Sandra is awarded significantly more on average (\$642.06 vs. \$619.20, p = 0.014). \footnote{Excellent Sandra also earns more on average than Sammie, a low-competence name, when he is rated ``Excellent” (\$635.98 vs \$616.60, p=0.000).} However, there is also no significant difference between Excellent Sandra and Excellent Misty (\$655.31 vs \$643.20, p=0.141). These results are consistent with H1, in that Excellent Misty earns no less than Excellent Sandra, while Excellent James earns substantively and significantly less than the baseline.
 
-Turning to competence, I consider the difference between name valence characteristics and aid amounts awarded. Recall that competence is determined by valence-characteristic scores in the Names Dataset \citep{hayes_2020}. Hayes and Mitchel’s findings suggest that name-characteristics have the potential to minimize differences in aid allotment due to racial prejudice; however, the mitigating effects of name-characteristics do not appear to extend to gender bias. Sandra and James are both high-competence names, while Misty and Sammie are relatively low-competence. I predicted in H2 that high competence names should receive more, on average, than low competence names. Thus, holding applicant quality constant, Sandra should receive more than Misty and James should receive more than Sammie, relative to the baseline. I do not find empirical support for H2. There is no statistically or substantively significant difference between the amounts awarded to Excellent Misty and Excellent Sandra (\$655.31 vs \$643.20, p=0.141), nor is there between Excellent James and Excellent Sammie (\$619.20 and \$616.60, p=0.88), and Poor James and Poor Sammie (\$600.60 and \$600.32, p=0.986). This suggests that, among whites, perceived competence matters less than when making inter-racial comparisons.
+Turning to competence, I consider the difference between name valence characteristics and aid amounts awarded. Recall that competence is determined by valence-characteristic scores in the Names Dataset \citep{hayes_2020}. Hayes and Mitchel’s findings suggest that name-characteristics have the potential to minimize differences in aid allotment due to racial prejudice; however, the mitigating effects of name-characteristics do not appear to extend to gender bias. Sandra and James are both high-competence names, while Misty and Sammie are relatively low-competence. I predicted in H2 that high competence names should receive more, on average, than low competence names. Thus, holding applicant quality constant, Sandra should receive more than Misty and James should receive more than Sammie, relative to the baseline. I do not find empirical support for H2. There is no statistically or substantively significant difference between the amounts awarded to Excellent Misty and Excellent Sandra (\$655.31 vs \$643.20, p=0.141), nor is there between Excellent James and Excellent Sammie (\$619.20 and \$616.60, p=0.88), and Poor James and Poor Sammie (\$600.60 and \$600.32, p=0.986). This suggests that, among whites, perceived competence may matter less than when making inter-racial comparisons.
 
 Finally, I predicted that, for male applicants, there will be no significant difference between amounts awarded to workers rated ``Excellent” as compared to workers rated ``Poor.” Conversely, I predicted that the opposite will be true for female applicants; that is, worker quality rating will result in a significant difference in the amount awarded. To evaluate H3 and H4, I compare the difference in means for each treatment name to (James, Sammie, and Misty) when they are ``Excellent” rated workers to when they are rated ``Poor.” Table \ref{lasttable} shows the results of this test, which support H3 and H4. There is a statistically significant difference in the amount of aid awarded to Excellent Misty compared to Poor Misty; however, there is no such difference between Excellent Sammie or James compared to Poor Sammie or James.
 
-\begin{table}[]
-	\caption{The Effect of Quality on Deservingness}
-	\label{lasttable}
-	\centering
-	\begin{tabular}{lllll}
-		\textbf{Treatment Name}      & \textbf{Excellent}            & \textbf{Poor}                 & \textbf{Difference}             & \textbf{p-value}           \\ \hline
-		\multicolumn{1}{|l|}{Misty}  & \multicolumn{1}{l|}{\$643.20} & \multicolumn{1}{l|}{\$611.80} & \multicolumn{1}{l|}{\$ - 31.40} & \multicolumn{1}{l|}{0.044**} \\ \hline
-		\multicolumn{1}{|l|}{Sammie} & \multicolumn{1}{l|}{\$619.20} & \multicolumn{1}{l|}{\$600.59} & \multicolumn{1}{l|}{\$-18.16}   & \multicolumn{1}{l|}{0.256} \\ \hline
-		\multicolumn{1}{|l|}{James}  & \multicolumn{1}{l|}{\$616.60} & \multicolumn{1}{l|}{\$600.32} & \multicolumn{1}{l|}{\$ - 16.28} & \multicolumn{1}{l|}{0.351} \\ \hline
-	\end{tabular}
-\end{table}
+\begin{table}[!htbp] \centering 
+	\caption{The Effect of Quality on Deservingness} 
+	\label{lasttable} 
+	\footnotesize 
+	\begin{tabular}{@{\extracolsep{1pt}} ccccccc} 
+		\\[-1.8ex]\hline \\[-1.8ex] 
+		& Condition & Mean 1 & Mean 2 & Upper CI & Lower CI & p-value \\ 
+		\hline \\[-1.8ex] 
+		& Excellent Misty vs Poor Misty & 643.198 & 611.797 & 0.728 & 62.073 & 0.045** \\ 
+		 & Excellent James vs Poor James & 619.198 & 600.589 & -13.564 & 50.781 & 0.256 \\ 
+		 & Excellent Sammie vs Poor Sammie & 616.598 & 600.317 & -18.015 & 50.576 & 0.352 \\ 
+		\hline \\[-1.8ex] 
+	\end{tabular} 
+\end{table} 
 
 
 The totality of these results suggest that identically-situated men and women are evaluated differently when put in competition for scarce resources. Though implicit competence does not appear to play a role in aid evaluations when comparing white men and women to each other, positive third-party quality ratings affect women’s earnings and do not alter men’s.
@@ -256,10 +263,106 @@ This article addresses a fundamental question concerning American's political at
 
 I find that gender and American values of hard work jointly influence how individuals evaluate the deserving poor. To begin, my results suggest that, on average, women are perceived as more deserving than similarly situated men. This is in line with historical and qualitative scholarship \cite{willrich2000home} and broadly suggestive of ambivalently sexist attitudes in the public \citep{glick_ambivalent_2001, glick_hostile_1997}. Moreover, I find that third-party quality evaluations yield higher dividends for women, whereas they yield no effects for men. This result comports with a large body of scholarship suggesting that, absent external interventions, women's abilities and contributions are taken less seriously than their male counterparts. One solution identified by scholars across disciplines for helping disadvantaged women overcome these hurdles is additional job training and certificate programs that provide an external, reliable evaluation of their quality as a worker \citep{abel_value_2020, dadgar_labor_2015, jepsen_labor-market_2014}. My results suggest that these kinds of interventions are likely to improve the outcomes of women applying for aid, but not men. As a point of departure from past scholarship on the realization of welfare attitudes \citep{hayes_2020}, I find that the valence characteristics of treatment names has no effect on the amount awarded applicants.
 
-Moreover, my experimental methodology serves as a point of departure for a much broader research agenda. Heretofore, the vast majority of scholarship on deservingness and welfare attitudes has elicited these attitudes in a costless, unconstrained environment (). By imposing a budgetary constraint, I am able to avoid acquiescence bias and put respondents in a decision-making environment which more closely mirrors the real world. In so doing, I am better able to answer the question: given that the government cannot satisfy every need, who should it take care of first? Protecting women, especially those who are good workers, appears to be the foremost priority. One implication of this result is that policymakers are most likely to garner support for government aid programs when their messaging about these programs is focused on how they will support hardworking women, such as single mothers. Further work is needed to understand how the gender attitudes reported here extend into political messaging and policy evaluations.
+Moreover, my experimental methodology serves as a point of departure for a much broader research agenda. Heretofore, the vast majority of scholarship on deservingness and welfare attitudes has elicited these attitudes in a costless, unconstrained environment \citep{rabinowitz2009white, aaroe2014crowding, sniderman1993scar, monnat2010color}. By imposing a budgetary constraint, I am able to avoid acquiescence bias and put respondents in a decision-making environment which more closely mirrors the real world. In so doing, I am better able to answer the question: given that the government cannot satisfy every need, who should it take care of first? Protecting women, especially those who are good workers, appears to be the foremost priority. One implication of this result is that policymakers are most likely to garner support for government aid programs when their messaging about these programs is focused on how they will support hardworking women, such as single mothers. Further work is needed to understand how the gender attitudes reported here extend into political messaging and policy evaluations.
 
-Future work would also benefit from a more robust understanding of why good female workers, in particular, are favored, as this seems to cut against notions of ambivalent sexism, in which women fulfilling traditional, home-bound duties are praised and protected and those failing to do so are punished. Additionally, future work should consider what can be done in the fact of gender differences in deservingness between otherwise identical applicants. If the normative goal is an equitable society, then presumably the normatively best result is one in which there are no differences between a ``Sandra" or a ``James", holding all else constant. This work raises clear questions as to what additional measures will reduce the gender differences in perceived deservingness of applicants. In this way, my work lays the foundation for additional research on the American welfare state and beyond.
+Future work would also benefit from a more robust understanding of why good female workers, in particular, are favored, as this seems to cut against notions of ambivalent sexism, in which women fulfilling traditional, home-bound duties are praised and protected and those failing to do so are punished. Additionally, future work should consider what can be done in the fact of gender differences in deservingness between otherwise identical applicants. If the normative goal is an equitable society, then presumably the normatively best result is one in which there are no differences between a ``Sandra" or a ``James", holding all else constant. This work raises clear questions as to what additional measures will reduce the gender differences in perceived deservingness of applicants. In this way, my work lays the foundation for additional research on the American welfare state.
 
+\pagebreak
+\appendix
+\section*{Appendix A - Robustness}
+This appendix presents a series of relevant robustness checks.
+
+\subsection*{Subsample Analyses}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.75]{figs/results-gen-pop.png}
+	\caption{Results Restricted to Nationally Representative Subsample}
+	\label{}
+\end{figure}
+
+Restricting the sample to the nationally representative subsample, I find that male names are still awarded less relative to the baseline than female names, but this difference is not statistically significant at conventional levels.
+
+% Date and time: Wed, Feb 22, 2023 - 11:57:15 AM
+\begin{table}[!htbp] \centering 
+	\caption{Testing H1 with Nationally Representative Sample} 
+	\label{} 
+	\footnotesize 
+	\begin{tabular}{@{\extracolsep{1pt}} cccccc} 
+		\\[-1.8ex]\hline \\[-1.8ex] 
+		& Condition & Mean Difference & Upper CI & Lower CI & p-value \\ 
+		\hline \\[-1.8ex] 
+		& Excellent Misty vs Baseline & 3.537 & -11.467 & 18.542 & 0.643 \\ 
+		& Excellent James vs Baseline & 16.065 & -8.571 & 40.7 & 0.2 \\ 
+		& Excellent Sammie vs Baseline & 10.041 & -7.728 & 27.81 & 0.266 \\ 
+		\hline \\[-1.8ex] 
+	\end{tabular} 
+\end{table} 
+
+I find that Excellent Misty is awarded more than Poor Misty and that these differences are statistically significant at conventional levels, whereas the difference in means between Poor and Excellent James and Poor and Excellent Sammie are not statistically significant at conventional levels.
+
+\begin{table}[!htbp] \centering 
+	\caption{} 
+	\label{} 
+	\footnotesize 
+	\begin{tabular}{@{\extracolsep{1pt}} ccccccc} 
+		\\[-1.8ex]\hline \\[-1.8ex] 
+		& Condition & Mean 1 & Mean 2 & Upper CI & Lower CI & p-value \\ 
+		\hline \\[-1.8ex] 
+		& Excellent Misty vs Poor Misty & 648.09 & 601.396 & 7.527 & 85.86 & 0.02** \\ 
+		& Excellent James vs Poor James & 624.393 & 590.662 & -7.489 & 74.952 & 0.108 \\ 
+		& Excellent Sammie vs Poor Sammie & 614.041 & 599.09 & -28.278 & 58.181 & 0.497 \\ 
+		\hline \\[-1.8ex] 
+	\end{tabular} 
+\end{table} 
+
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.75]{figs/results-low-ses.png}
+	\caption{Results Restricted to Low SES Subsample}
+	\label{}
+\end{figure}
+
+
+Restricting the analysis to the low SES subsample, I find that many of my results on the full sample hold. The amount awarded to Excellent Misty is statistically indistinguishable from the amount awarded to the baseline. Excellent James earns significantly less than the baseline, as does Excellent Sammie.
+
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Wed, Feb 22, 2023 - 11:51:22 AM
+\begin{table}[!htbp] \centering 
+	\caption{Testing H1 with Low SES Subsample} 
+	\label{} 
+	\footnotesize 
+	\begin{tabular}{@{\extracolsep{1pt}} cccccc} 
+		\\[-1.8ex]\hline \\[-1.8ex] 
+		& Condition & Mean Difference & Upper CI & Lower CI & p-value \\ 
+		\hline \\[-1.8ex] 
+		 & Excellent Misty vs Baseline & 27.491 & -9.06 & 64.042 & 0.139 \\ 
+		 & Excellent James vs Baseline & 36.948 & 12.719 & 61.178 & 0.003*** \\ 
+		 & Excellent Sammie vs Baseline & 36.318 & 8.942 & 63.694 & 0.01** \\ 
+		\hline \\[-1.8ex] 
+	\end{tabular} 
+\end{table} 
+
+However, Excellent Misty earns only \$4 more on average than Poor Misty and this difference is not statistically significant. Excellent James earns \textit{less} than Poor James on average, but this difference is not statistically significant either. Excellent Sammie earns more than Poor Sammie, but this difference is also not statistically significant.
+
+\begin{table}[!htbp] \centering 
+	\caption{Testing H3a-b with Low SES Subsample} 
+	\label{} 
+	\footnotesize 
+	\begin{tabular}{@{\extracolsep{1pt}} ccccccc} 
+		\\[-1.8ex]\hline \\[-1.8ex] 
+		& Condition & Mean 1 & Mean 2 & Upper CI & Lower CI & p-value \\ 
+		\hline \\[-1.8ex] 
+		 & Excellent Misty vs Poor Misty & 634.42 & 630.119 & -45.183 & 53.783 & 0.864 \\ 
+		 & Excellent James vs Poor James & 608.433 & 618.682 & -61.091 & 40.592 & 0.691 \\ 
+		 & Excellent Sammie vs Poor Sammie & 621.234 & 602.602 & -38.23 & 75.494 & 0.519 \\ 
+		\hline \\[-1.8ex] 
+	\end{tabular} 
+\end{table} 
+
+These results suggest one of two things. First, it is possible that the treatments effect the two subsamples differently. Perhaps the general population cares more about applicant quality and less about gender, whereas low income populations bring stronger gender stereotypes into deservingness evaluations. However, another consideration is that these differences in results are an artifact of randomization because I randomized treatments over the whole sample, not over the two subsamples individually.
 
 \end{doublespace}
 

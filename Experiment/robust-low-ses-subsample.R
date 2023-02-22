@@ -1,3 +1,4 @@
+##robust low SESoversample
 library(tidyverse)
 library(viridis)
 library(haven)
@@ -7,15 +8,14 @@ library(modelsummary)
 library(gridExtra)
 
 #load df
-df <- read_sav("Data/FLSU0010_OUTPUT.sav") 
+df <- read_sav("Data/FLSU0010_OUTPUT.sav")
 var_label(df) <- NULL
-write_csv(df, "Data/FLSU0010_OUTPUT.csv")
+#write_csv(df, "Data/FLSU0010_OUTPUT.csv")
 
-#tidy and shape
 gender <- df %>%
-  select(caseid, applicant2_treat, APP_1_amt_1, APP_2_amt_1, STATE_amt_1) %>%
+  select(caseid, applicant2_treat, APP_1_amt_1, APP_2_amt_1, STATE_amt_1, weight_oversample) %>%
   drop_na() %>%
-    mutate(applicant_2_char = as.character(applicant2_treat),
+  mutate(applicant_2_char = as.character(applicant2_treat),
          applicant_2_char = recode(applicant2_treat,
                                    "1" = "Misty (Exc)",
                                    "2" = "Misty (Poor)",
@@ -56,10 +56,10 @@ gender <- df %>%
                                         "No Name" = 2)) %>%
   mutate(applicant_2_sex = as.character(applicant_2_name),
          applicant_2_sex = recode(applicant_2_name,
-                                        "Misty" = "Female",
-                                        "James" = "Male",
-                                        "Sammie" = "Male",
-                                        "No Name" = "None")) %>%
+                                  "Misty" = "Female",
+                                  "James" = "Male",
+                                  "Sammie" = "Male",
+                                  "No Name" = "None")) %>%
   mutate(applicant_1_rate = "Excellent") %>%
   mutate(applicant_1_name = "Sandra") %>%
   mutate(applicant_1_char = "Sandra (Exc)")
@@ -72,22 +72,6 @@ gender <- gender%>%
   mutate(app_2_amt_av = mean(APP_2_amt_1))%>%
   mutate(app_1_amt_av = mean(APP_1_amt_1))%>%
   mutate(STATE_amt_av = mean(STATE_amt_1))
-
-##analysis
-
-for_fig2 <- gender %>%
-  select(applicant2_treat, app_1_amt_av, app_2_amt_av, STATE_amt_av, 
-         applicant_2_name, applicant_2_rate, amt_diff, applicant_2_sex)%>%
-  pivot_longer(app_1_amt_av:STATE_amt_av, names_to = "person", 
-               values_to = "amount")
-
-for_fig2 <- for_fig2 %>%
-  group_by(applicant2_treat) %>%
-  mutate(se = (sd(amount)/sqrt(length((amount))))) %>%
-  filter(applicant2_treat < 7) #drop no-name
-
-
-
 
 ##Difference in means
 #Exc Misty to Baseline <- one group
@@ -183,6 +167,51 @@ res15
 
 
 
+##break into paired and unpaired tables
+
+tests <- list(res1, res3, res5)
+tab <- sapply(tests, function(x) {
+  c(x$estimate[1],
+    ci.lower = x$conf.int[1],
+    ci.upper = x$conf.int[2],
+    p.value = x$p.value)
+})
+
+tab <- as.data.frame(tab) %>%
+  rename("Excellent Misty vs Baseline" = V1) %>%
+  rename("Excellent James vs Baseline" = V2)%>%
+  rename("Excellent Sammie vs Baseline" = V3)%>%
+  mutate(measure = c("Mean Difference", "Upper CI", "Lower CI",
+                "p-value")) %>%
+  pivot_longer(
+    cols = !measure,
+    names_to = "Condition",
+    values_to = "Results"
+  ) %>%
+  pivot_wider(names_from = "measure", values_from = "Results")
+
+round_df <- function(x, digits) {
+  # round all numeric variables
+  # x: data frame 
+  # digits: number of digits to round
+  numeric_columns <- sapply(x, mode) == 'numeric'
+  x[numeric_columns] <-  round(x[numeric_columns], digits)
+  x
+}
+
+tab <- round_df(tab, 3)
+
+stargazer::stargazer(tab, type = "latex", style = "ajps", 
+                     summary = FALSE,
+                     font.size = 'footnotesize', 
+                     column.sep.width = "1pt", 
+                     no.space=T,
+                     digits.extra=3)
+
+
+
+
+
 tests2 <- list(res7, res8, res9)
 tab2 <- sapply(tests2, function(x) {
   c(x$estimate[1],
@@ -205,15 +234,6 @@ tab2 <- as.data.frame(tab2) %>%
   ) %>%
   pivot_wider(names_from = "measure", values_from = "Results")
 
-round_df <- function(x, digits) {
-  # round all numeric variables
-  # x: data frame 
-  # digits: number of digits to round
-  numeric_columns <- sapply(x, mode) == 'numeric'
-  x[numeric_columns] <-  round(x[numeric_columns], digits)
-  x
-}
-
 tab2 <- round_df(tab2, 3)
 
 stargazer::stargazer(tab2, type = "latex", style = "ajps", 
@@ -224,25 +244,19 @@ stargazer::stargazer(tab2, type = "latex", style = "ajps",
                      digits.extra=3)
 
 
-
-##ROBUSTNESS CHECK
-## no name vs sandra
-nn <- read_csv("Data/gender_df.csv") %>%
-  subset(applicant2_treat == "7")
-
-nn <- nn%>%
-  group_by(applicant2_treat)%>%
-  mutate(app_2_amt_av = mean(APP_2_amt_1))%>%
-  mutate(app_1_amt_av = mean(APP_1_amt_1))%>%
-  mutate(STATE_amt_av = mean(STATE_amt_1))
-
-##t-test Sandra vs. no name
-s <- nn$APP_1_amt_1
-no_name <- nn$APP_2_amt_1
-res_robust <- t.test(s, no_name, paired = TRUE)
-res_robust
-
+###figures
 ##PLOTS
+for_fig2 <- gender %>%
+  select(applicant2_treat, app_1_amt_av, app_2_amt_av, STATE_amt_av, 
+         applicant_2_name, applicant_2_rate, amt_diff, applicant_2_sex)%>%
+  pivot_longer(app_1_amt_av:STATE_amt_av, names_to = "person", 
+               values_to = "amount")
+
+for_fig2 <- for_fig2 %>%
+  group_by(applicant2_treat) %>%
+  mutate(se = (sd(amount)/sqrt(length((amount))))) %>%
+  filter(applicant2_treat < 7) #drop no-name
+
 summary(for_fig2$amount)
 ggplot(for_fig2, aes(x=person, y=amount, color = applicant_2_rate)) + 
   geom_point(aes(shape = person)) +
@@ -254,84 +268,9 @@ ggplot(for_fig2, aes(x=person, y=amount, color = applicant_2_rate)) +
   scale_shape_discrete(labels=c('Baseline', 'Treatment', 'State')) +
   theme(axis.text.x = element_blank()) +
 #  theme(legend.key.height = unit(.9, 'mm'),
-#         legend.position = c(.85,.4)) +
+#        legend.position = c(.8,.4)) +
   labs(x = "",
        y = "Average Dollars Awarded",
        shape = "Recipient",
        color = "Quality of Treatment Name")
-  ggsave("Paper/figs/general-results-name.png", height = 4, width = 5)
-  
-
-##scatter
-ggplot(gender, aes(x=APP_1_amt_1, y=APP_2_amt_1)) + 
-  geom_point() +
-  theme_bw()
-
-
-df2 <- select(gender, -applicant_2_char)
-ggplot(gender, aes(x=APP_1_amt_1, y=APP_2_amt_1)) + theme_bw() +
-  geom_point(data = df2, color = "grey70", alpha=.4) +
-  geom_point(alpha=.6, aes(color = applicant_2_char)) + 
-  scale_color_manual(values=c("#000000", "#000000", "#000000",
-                              "#000000", "#000000", "#000000",
-                              "#000000")) +
-  facet_wrap(~applicant_2_char) +
-  theme(legend.position = "none") +
-  labs(title = "Dollars Given By Treatment Condition",
-       x = " $$ Given to Sandra (Exc)",
-       y = "$$ Given to Treatment",
-       color = "Treatment")
-ggsave("Paper/figs/dollars-given-by-treatment-condition.png", 
-       height = 4, width = 4)
-
-exc <- for_fig2 %>%
-  subset(applicant_2_rate == "Excellent" & person == "app_2_amt_av") %>%
-  mutate(diff_av = mean(amt_diff)) %>%
-  select(diff_av, person, applicant_2_name) %>%
-  unique()
-
-library(ggpubr)
-
-ggplot(exc, aes(x=applicant_2_name, y=diff_av)) + 
-  geom_col(fill="grey") +
-  scale_y_continuous(limits = c(-25,0)) +
-  theme_bw() +
-  labs(title = "Differences in Excellent Applicants From Baseline",
-       x = "",
-       y = "Average Difference in $$ From Baseline") +
-  geom_text(x=1, y=-2, label="$-22.86, \n p=0.014**") +
-  geom_text(x=2, y=-2, label="$-12.11, \n p=0.141") +
-  geom_text(x=3, y=-2, label="$-19.38, \n p=0.000***")
-ggsave("Paper/figs/diff-in-exc-apps-from-baseline_conf.png", 
-       height = 4, width = 6)
-
-qual <- for_fig2 %>%
-  select(applicant_2_name, applicant_2_rate, person, amount) %>%
-  subset(person == "app_2_amt_av")
-
-excellent <- qual %>%
-  subset(applicant_2_rate == "Excellent") %>%
-  group_by(applicant_2_name) %>%
-  summarize(av_exc = mean(amount))
-
-poor <- qual %>%
-  subset(applicant_2_rate == "Poor") %>%
-  group_by(applicant_2_name) %>%
-  summarize(av_poor = mean(amount))
-
-qual2 <- left_join(excellent, poor)
-qual2$diff <- (qual2$av_exc - qual2$av_poor)
-
-ggplot(qual2, aes(x=applicant_2_name, y=diff)) + 
-  geom_col(fill="grey") +
-  scale_y_continuous(limits = c(0, 35)) +
-  theme_bw() +
-  labs(title = "Excellent vs Poor Rated Applicants",
-       x = "",
-       y = "Average Difference in $$ From Poor Condition") +
-  geom_text(x=1, y=4, label="$18.61, \n p=0.256") +
-  geom_text(x=2, y=4, label="$31.40, \n p=0.044**") +
-  geom_text(x=3, y=4, label="$16.28, \n p=0.351")
-ggsave("Paper/figs/diff-in-exc-apps-from-poor_conf.png", 
-       height = 4, width = 6)
-
+ggsave("Paper/figs/results-low-ses.png", height = 4, width = 5)

@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: warren-WhoBenefits.aux
 The style file: apsr.bst
 Database file #1: womenref.bib
-You've used 46 entries,
+You've used 49 entries,
             2874 wiz_defined-function locations,
-            925 strings with 13550 characters,
-and the built_in function-call counts, 194196 in all, are:
-= -- 31886
-> -- 2183
+            944 strings with 14087 characters,
+and the built_in function-call counts, 208828 in all, are:
+= -- 34292
+> -- 2374
 < -- 0
-+ -- 14950
-- -- 777
-* -- 16675
-:= -- 38843
-add.period$ -- 184
-call.type$ -- 46
-change.case$ -- 598
-chr.to.int$ -- 45
-cite$ -- 46
-duplicate$ -- 695
-empty$ -- 1572
-format.name$ -- 837
-if$ -- 34873
++ -- 16095
+- -- 843
+* -- 17944
+:= -- 41751
+add.period$ -- 196
+call.type$ -- 49
+change.case$ -- 637
+chr.to.int$ -- 48
+cite$ -- 49
+duplicate$ -- 740
+empty$ -- 1679
+format.name$ -- 903
+if$ -- 37505
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 49
-newline$ -- 200
-num.names$ -- 518
-pop$ -- 153
+missing$ -- 52
+newline$ -- 212
+num.names$ -- 556
+pop$ -- 161
 preamble$ -- 1
-purify$ -- 690
+purify$ -- 735
 quote$ -- 0
-skip$ -- 601
+skip$ -- 641
 stack$ -- 0
-substring$ -- 45126
-swap$ -- 97
-text.length$ -- 644
+substring$ -- 48540
+swap$ -- 103
+text.length$ -- 686
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 176
+type$ -- 188
 warning$ -- 0
-while$ -- 1085
+while$ -- 1161
 width$ -- 0
-write$ -- 640
+write$ -- 681
