@@ -274,3 +274,4 @@ ggplot(for_fig2, aes(x=person, y=amount, color = applicant_2_rate)) +
        shape = "Recipient",
        color = "Quality of Treatment Name")
 ggsave("Paper/figs/results-low-ses.png", height = 4, width = 5)
+
