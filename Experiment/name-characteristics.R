@@ -7,13 +7,14 @@ names <- read.csv("Data/names.csv") %>%
            char == "hardworking" | char == "competent")
 
 ggplot(names, aes(x=char, y=est)) + 
-  geom_errorbar(aes(x=char, ymin=est-se, ymax=est+se), 
-                width=0.4, alpha=0.9, size=1) +
-  geom_point(aes(shape=name), size=3, alpha=.8) +
+  geom_errorbar(aes(x=char, ymin=est-se, ymax=est+se, color=name), 
+                width=0.4, size=1) +
+  geom_point(aes(color=name, shape = ), size=3, alpha=.8) +
   coord_flip() + theme_minimal() +
+  scale_color_viridis_d() +
   labs(title = "Name Characteristics",
-       subtitle = "From Hayes and Mitchell (2020)",
+       subtitle = "From Hayes and Mitchell (2022)",
        x = "Characteristics",
        y = "Estimates",
-       shape = "Name")
-ggsave("figs/characteristics.png", width = 6, height = 4)
+       color = "Name")
+ggsave("Paper/figs/characteristics.png", width = 6, height = 4)
