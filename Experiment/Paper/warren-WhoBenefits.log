@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.14)  13 MAR 2023 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.14)  13 MAR 2023 21:54
 entering extended mode
 **./warren-WhoBenefits.tex
 (warren-WhoBenefits.tex
@@ -530,6 +530,9 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `warren-WhoBenefits.aux'.
 
@@ -657,42 +660,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--84
  []
 
 [2] [3] [4] [5] [6] [7]
-<figs/name-char.png, id=284, 320.397pt x 286.671pt>
+<figs/name-char.png, id=285, 320.397pt x 286.671pt>
 File: figs/name-char.png Graphic file (type png)
 <use figs/name-char.png>
 Package pdftex.def Info: figs/name-char.png  used on input line 134.
 (pdftex.def)             Requested size: 240.29715pt x 215.00272pt.
  [8 <./figs/name-char.png>]
-<figs/example_treatment.png, id=292, 404.00937pt x 396.48125pt>
+<figs/example_treatment.png, id=293, 404.00937pt x 396.48125pt>
 File: figs/example_treatment.png Graphic file (type png)
 <use figs/example_treatment.png>
-Package pdftex.def Info: figs/example_treatment.png  used on input line 151.
+Package pdftex.def Info: figs/example_treatment.png  used on input line 150.
 (pdftex.def)             Requested size: 404.00838pt x 396.48027pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [9] [10 <./figs/example_treatment.png>]
-<figs/general-results-name.png, id=310, 361.35pt x 289.08pt>
+<figs/general-results-name.png, id=311, 361.35pt x 289.08pt>
 File: figs/general-results-name.png Graphic file (type png)
 <use figs/general-results-name.png>
-Package pdftex.def Info: figs/general-results-name.png  used on input line 165.
+Package pdftex.def Info: figs/general-results-name.png  used on input line 166.
 
 (pdftex.def)             Requested size: 289.0804pt x 231.2643pt.
  [11 <./figs/general-results-name.png>]
-[12] [13] [14] [15] [16] [17] [18]
-<figs/results-gen-pop.png, id=390, 361.35pt x 289.08pt>
+[12] [13] [14] [15] [16] [17]
+<figs/results-gen-pop.png, id=378, 361.35pt x 289.08pt>
 File: figs/results-gen-pop.png Graphic file (type png)
 <use figs/results-gen-pop.png>
-Package pdftex.def Info: figs/results-gen-pop.png  used on input line 288.
+Package pdftex.def Info: figs/results-gen-pop.png  used on input line 289.
 (pdftex.def)             Requested size: 271.01184pt x 216.80946pt.
- [19 <./figs/results-gen-pop.png>]
-<figs/results-low-ses.png, id=398, 361.35pt x 289.08pt>
+ [18 <./figs/results-gen-pop.png>]
+<figs/results-low-ses.png, id=387, 361.35pt x 289.08pt>
 File: figs/results-low-ses.png Graphic file (type png)
 <use figs/results-low-ses.png>
-Package pdftex.def Info: figs/results-low-ses.png  used on input line 332.
+Package pdftex.def Info: figs/results-low-ses.png  used on input line 333.
 (pdftex.def)             Requested size: 271.01184pt x 216.80946pt.
- [20 <./figs/results-low-ses.png>] [21] (warren-WhoBenefits.bbl [22]
+ [19 <./figs/results-low-ses.png>] [20]
+<figs/sliding-scale.png, id=402, 524.45938pt x 111.91812pt>
+File: figs/sliding-scale.png Graphic file (type png)
+<use figs/sliding-scale.png>
+Package pdftex.def Info: figs/sliding-scale.png  used on input line 390.
+(pdftex.def)             Requested size: 393.34357pt x 83.93839pt.
+ [21 <./figs/sliding-scale.png>] (warren-WhoBenefits.bbl [22]
 Overfull \hbox (27.47134pt too wide) in paragraph at lines 118--121
 \OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://dataverse.harvard.edu/dataset.xh
 tml?persistentId=doi:10.7910/DVN/HEOSVW 
@@ -703,47 +712,48 @@ tml?persistentId=doi:10.7910/DVN/HEOSVW
 Package caption Warning: Unused \captionsetup[sub] on input line 23.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 384.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
 [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 384.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
  (warren-WhoBenefits.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 384.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 384.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 406.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 384.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
  ) 
 Here is how much of TeX's memory you used:
- 10795 strings out of 480930
- 180916 string characters out of 2896945
- 464970 words of memory out of 3000000
- 26360 multiletter control sequences out of 15000+200000
- 546547 words of font info for 78 fonts, out of 3000000 for 9000
+ 10809 strings out of 480930
+ 181219 string characters out of 2896945
+ 465029 words of memory out of 3000000
+ 26370 multiletter control sequences out of 15000+200000
+ 546888 words of font info for 79 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,11n,47p,1456b,497s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,11n,47p,1456b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/d
-pi600\tcrm1200.pk> <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
-ur/jknappen/ec/dpi600\tcrm0700.pk> <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2
-.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Oscar Wilde\AppDat
-a\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1440.pk><C:/Users/Osc
-ar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
-0.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Oscar Wilde/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Oscar W
-ilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr12.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Oscar Wilde/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Oscar Wilde/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
-s/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmti12.pfb>
-Output written on warren-WhoBenefits.pdf (26 pages, 660003 bytes).
+pi600\tcbx1200.pk> <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
+ur/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2
+.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0700.pk> <C:\Users\Oscar Wilde\AppDat
+a\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Os
+car Wilde\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1440.
+pk><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Oscar Wilde/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Oscar Wil
+de/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Oscar Wilde/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users
+/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb>
+Output written on warren-WhoBenefits.pdf (26 pages, 678620 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 97 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 502 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
