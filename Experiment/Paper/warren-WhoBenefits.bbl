@@ -27,6 +27,11 @@ Bobocel, D.~Ramona, Leanne~S. Son~Hing, Liane~M. Davey, David~J. Stanley
 \newblock ``Justice-based opposition to social policies: {Is} it genuine?''
   {\em Journal of Personality and Social Psychology} 75:653--669.
 
+\harvarditem{Cassese \harvardand\ Barnes}{2019}{cassese2019intersectional}
+Cassese, Erin~C \harvardand\ Tiffany~D Barnes. 2019.
+\newblock ``Intersectional motherhood: Investigating public support for child
+  care subsidies.'' {\em Politics, Groups, and Identities} 7(4):775--793.
+
 \harvarditem[Castillo et~al.]{Castillo, Petrie, Torero \harvardand\
   Vesterlund}{2013}{castillo_gender_2013}
 Castillo, Marco, Ragan Petrie, Maximo Torero \harvardand\ Lise Vesterlund.
@@ -46,6 +51,11 @@ Clayton, Amanda, Amanda~Lea Robinson, Martha~C. Johnson \harvardand\ Ragnhild
 \newblock ``({How}) {Do} {Voters} {Discriminate} {Against} {Women}
   {Candidates}? {Experimental} and {Qualitative} {Evidence} {From} {Malawi}.''
   {\em Comparative Political Studies} 53(3-4):601--630.
+
+\harvarditem{Converse}{1964}{converse1946}
+Converse, Phillip. 1964.
+\newblock {\em The Nature of Belief Systems in Mass Publics.}
+\newblock London: Free Press of Glencoe.
 
 \harvarditem{Dadgar \harvardand\ Trimble}{2015}{dadgar_labor_2015}
 Dadgar, Mina \harvardand\ Madeline~Joy Trimble. 2015.
@@ -142,10 +152,21 @@ Horton, John~J, David~G Rand \harvardand\ Richard~J Zeckhauser. 2011.
 \newblock ``The online laboratory: Conducting experiments in a real labor
   market.'' {\em Experimental economics} 14:399--425.
 
+\harvarditem{Huddy}{2004}{huddy2004contrasting}
+Huddy, Leonie. 2004.
+\newblock ``Contrasting theoretical approaches to intergroup relations.'' {\em
+  Political Psychology} 25(6):947--967.
+
 \harvarditem{Ingram \harvardand\ Schneider}{1993}{ingram1993constructing}
 Ingram, Helen \harvardand\ Anne Schneider. 1993.
 \newblock ``Constructing citizenship: The subtle messages of policy design.''
   {\em Public policy for democracy} pp.~68--94.
+
+\harvarditem[Iyengar, Sood \harvardand\ Lelkes]{Iyengar, Sood \harvardand\
+  Lelkes}{2012}{iyengar2012affect}
+Iyengar, Shanto, Gaurav Sood \harvardand\ Yphtach Lelkes. 2012.
+\newblock ``Affect, not ideologya social identity perspective on
+  polarization.'' {\em Public opinion quarterly} 76(3):405--431.
 
 \harvarditem[Jepsen, Troske \harvardand\ Coomes]{Jepsen, Troske \harvardand\
   Coomes}{2014}{jepsen_labor-market_2014}
@@ -202,6 +223,12 @@ Mandel, Hadas. 2013.
 \harvarditem{McClosky \harvardand\ Zaller}{1984}{mclosky_ethos}
 McClosky, Herbert \harvardand\ John Zaller. 1984.
 \newblock ``The {American} {Ethos}.''.
+
+\harvarditem{Mettler}{2011}{mettler2011submerged}
+Mettler, Suzanne. 2011.
+\newblock {\em The submerged state: How invisible government policies undermine
+  American democracy}.
+\newblock University of chicago Press.
 
 \harvarditem{Monnat}{2010{\em a}}{monnat2010color}
 Monnat, Shannon~M. 2010{\em a}.
@@ -284,6 +311,11 @@ Schneider, Anne~L \harvardand\ Helen~M Ingram. 2005.
 \newblock {\em Deserving and entitled: Social constructions and public policy}.
 \newblock Suny Press.
 
+\harvarditem{Smith}{1980}{smith198075}
+Smith, Tom~W. 1980.
+\newblock ``The 75\% solution: An analysis of the structure of attitudes on gun
+  control, 1959-1977.'' {\em J. Crim. L. \& Criminology} 71:300.
+
 \harvarditem[Sniderman et~al.]{Sniderman, Carmines, Layman \harvardand\
   Carter}{1996}{sniderman_beyond_1996}
 Sniderman, Paul~M., Edward~G. Carmines, Geoffrey~C. Layman \harvardand\ Michael
@@ -308,6 +340,12 @@ Sniderman, Paul~M. \harvardand\ Richard~A. Brody. 1977.
 Sniderman, Paul~M \harvardand\ Thomas Piazza. 1993.
 \newblock {\em The scar of race}.
 \newblock Harvard University Press.
+
+\harvarditem{Theiss-Morse}{2009}{theiss2009counts}
+Theiss-Morse, Elizabeth. 2009.
+\newblock {\em Who counts as an American?: The boundaries of national
+  identity}.
+\newblock Cambridge University Press.
 
 \harvarditem{van Oorschot}{2000}{van_oorschot_who_nodate}
 van Oorschot, Wim. 2000.
@@ -338,5 +376,16 @@ Winter, Nicholas J.~G. 2006.
 \newblock ``Beyond {Welfare}: {Framing} and the {Racialization} of {White}
   {Opinion} on {Social} {Security}.'' {\em American Journal of Political
   Science} 50(2):400--420.
+
+\harvarditem{Winter}{2008}{winter2008dangerous}
+Winter, Nicholas~JG. 2008.
+\newblock {\em Dangerous frames: How ideas about race and gender shape public
+  opinion}.
+\newblock University of Chicago Press.
+
+\harvarditem{Wolpert \harvardand\ Gimpel}{1998}{wolpert1998self}
+Wolpert, Robin~M \harvardand\ James~G Gimpel. 1998.
+\newblock ``Self-interest, symbolic politics, and public attitudes toward gun
+  control.'' {\em Political Behavior} 20:241--262.
 
 \end{thebibliography}
