@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7380 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: who-benefits-JOP-blinded.aux
+The style file: apsr.bst
+Database file #1: womenref.bib
+You've used 65 entries,
+            2874 wiz_defined-function locations,
+            1033 strings with 16433 characters,
+and the built_in function-call counts, 267382 in all, are:
+= -- 43832
+> -- 3024
+< -- 0
++ -- 20509
+- -- 1079
+* -- 22845
+:= -- 53628
+add.period$ -- 260
+call.type$ -- 65
+change.case$ -- 845
+chr.to.int$ -- 63
+cite$ -- 65
+duplicate$ -- 991
+empty$ -- 2216
+format.name$ -- 1155
+if$ -- 48010
+int.to.chr$ -- 7
+int.to.str$ -- 0
+missing$ -- 73
+newline$ -- 281
+num.names$ -- 738
+pop$ -- 236
+preamble$ -- 1
+purify$ -- 975
+quote$ -- 0
+skip$ -- 842
+stack$ -- 0
+substring$ -- 61915
+swap$ -- 138
+text.length$ -- 910
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 242
+warning$ -- 0
+while$ -- 1537
+width$ -- 0
+write$ -- 900

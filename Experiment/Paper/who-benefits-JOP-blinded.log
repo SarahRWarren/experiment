@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.14)  8 JUN 2023 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.4.14)  8 JUN 2023 13:49
 entering extended mode
-**./appendices.tex
-(appendices.tex
+**./who-benefits-JOP-blinded.tex
+(who-benefits-JOP-blinded.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-04-06>
 ("C:\Users\Oscar Wilde\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article
@@ -514,25 +514,25 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ("C:\Users\Oscar Wilde\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xr.sty
 "
 Package: xr 2019/07/22 v5.05 eXternal References (DPC)
-) (appendices.aux)
-\openout1 = `appendices.aux'.
+) (who-benefits-JOP-blinded.aux)
+\openout1 = `who-benefits-JOP-blinded.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 ("C:\Users\Oscar Wilde\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\
 supp-pdf.mkii"
@@ -595,7 +595,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring ON on input line 49.
+Package hyperref Info: Link coloring ON on input line 56.
 
 ("C:\Users\Oscar Wilde\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nam
 eref.sty"
@@ -611,70 +611,17 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count294
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
-<figs/sliding-scale.png, id=3, 524.45938pt x 111.91812pt>
-File: figs/sliding-scale.png Graphic file (type png)
-<use figs/sliding-scale.png>
-Package pdftex.def Info: figs/sliding-scale.png  used on input line 66.
-(pdftex.def)             Requested size: 524.4581pt x 111.91785pt.
-
-Overfull \hbox (54.70308pt too wide) in paragraph at lines 66--67
- [][] 
- []
-
-[1
-
-{C:/Users/Oscar Wilde/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./fig
-s/sliding-scale.png>]
-<figs/pap1.png, id=16, 301.62688pt x 386.94562pt>
-File: figs/pap1.png Graphic file (type png)
-<use figs/pap1.png>
-Package pdftex.def Info: figs/pap1.png  used on input line 76.
-(pdftex.def)             Requested size: 452.4392pt x 580.417pt.
-<figs/pap2.png, id=17, 268.00125pt x 260.975pt>
-File: figs/pap2.png Graphic file (type png)
-<use figs/pap2.png>
-Package pdftex.def Info: figs/pap2.png  used on input line 77.
-(pdftex.def)             Requested size: 402.00087pt x 391.46155pt.
-<figs/pap3.png, id=18, 273.02pt x 114.92938pt>
-File: figs/pap3.png Graphic file (type png)
-<use figs/pap3.png>
-Package pdftex.def Info: figs/pap3.png  used on input line 78.
-(pdftex.def)             Requested size: 409.52899pt x 172.39363pt.
-<figs/pap4.png, id=19, 270.00874pt x 216.81pt>
-File: figs/pap4.png Graphic file (type png)
-<use figs/pap4.png>
-Package pdftex.def Info: figs/pap4.png  used on input line 79.
-(pdftex.def)             Requested size: 405.0121pt x 325.21419pt.
-<figs/pap5.png, id=20, 254.9525pt x 61.73062pt>
-File: figs/pap5.png Graphic file (type png)
-<use figs/pap5.png>
-Package pdftex.def Info: figs/pap5.png  used on input line 80.
-(pdftex.def)             Requested size: 382.42778pt x 92.59567pt.
-<figs/pap6.png, id=21, 277.035pt x 200.24812pt>
-File: figs/pap6.png Graphic file (type png)
-<use figs/pap6.png>
-Package pdftex.def Info: figs/pap6.png  used on input line 81.
-(pdftex.def)             Requested size: 415.55147pt x 300.37144pt.
-
-Overfull \hbox (0.30899pt too wide) in paragraph at lines 76--82
-[][] 
- []
-
-[2
-
-] [3 <./figs/pap1.png>] [4 <./figs/pap2.png> <./figs/pap3.png>] [5 <./figs/pap4
-.png> <./figs/pap5.png>] [6 <./figs/pap6.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 86.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 
 
 ("C:\Users\Oscar Wilde\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ums
 a.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
 
 
 ("C:\Users\Oscar Wilde\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ums
@@ -682,37 +629,100 @@ b.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-Package caption Warning: Unused \captionsetup[sub] on input line 25.
+LaTeX Warning: No \author given.
+
+[1
+
+{C:/Users/Oscar Wilde/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX
+ warning (ext4): destination with the same identifier (name{page.1}) has been a
+lready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.78 
+      [1]
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+[2] [3] [4] [5] [6] [7]
+<figs/characteristics.png, id=340, 433.62pt x 289.08pt>
+File: figs/characteristics.png Graphic file (type png)
+<use figs/characteristics.png>
+Package pdftex.def Info: figs/characteristics.png  used on input line 153.
+(pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8] [9 <./figs/characteristics.png>]
+<figs/example_treatment.png, id=357, 404.00937pt x 396.48125pt>
+File: figs/example_treatment.png Graphic file (type png)
+<use figs/example_treatment.png>
+Package pdftex.def Info: figs/example_treatment.png  used on input line 169.
+(pdftex.def)             Requested size: 404.00838pt x 396.48027pt.
+ [10 <./figs/example_treatment.png>]
+<figs/general-results-name.png, id=369, 361.35pt x 289.08pt>
+File: figs/general-results-name.png Graphic file (type png)
+<use figs/general-results-name.png>
+Package pdftex.def Info: figs/general-results-name.png  used on input line 185.
+
+(pdftex.def)             Requested size: 433.61783pt x 346.89426pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11] [12 <./figs/general-results-name.png>] [13] [14] [15] [16]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17] [18] [19] [20] [21] (who-benefits-JOP-blinded.bbl [22]
+Overfull \hbox (27.47134pt too wide) in paragraph at lines 145--148
+\OT1/cmr/bx/n/12 URL: \OT1/cmr/m/it/12 https://dataverse.harvard.edu/dataset.xh
+tml?persistentId=doi:10.7910/DVN/HEOSVW 
+ []
+
+[23] [24] [25])
+
+Package caption Warning: Unused \captionsetup[sub] on input line 23.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
-[7
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
- (appendices.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 94.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 395.
+[26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 395.
+ (who-benefits-JOP-blinded.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 395.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 395.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 395.
  ) 
 Here is how much of TeX's memory you used:
- 10467 strings out of 480930
- 173489 string characters out of 2896945
- 454632 words of memory out of 3000000
- 26127 multiletter control sequences out of 15000+200000
- 538574 words of font info for 47 fonts, out of 3000000 for 9000
+ 10866 strings out of 480930
+ 182615 string characters out of 2896945
+ 464813 words of memory out of 3000000
+ 26417 multiletter control sequences out of 15000+200000
+ 546547 words of font info for 78 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,7n,47p,1207b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,10n,47p,1669b,529s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/d
-pi600\tcbx1200.pk> <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
-ur/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Oscar Wilde/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Oscar Wilde/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Use
-rs/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr12.pfb>
-Output written on appendices.pdf (7 pages, 268387 bytes).
+pi600\tcrm1000.pk> <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
+ur/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Oscar Wilde\AppData\Local\MiKTeX\2
+.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0700.pk> <C:\Users\Oscar Wilde\AppDat
+a\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1440.pk><C:/Users/Osc
+ar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Oscar Wilde/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Oscar W
+ilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><C:/Users/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Oscar Wilde/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Oscar Wilde/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
+s/Oscar Wilde/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmti12.pfb>
+Output written on who-benefits-JOP-blinded.pdf (27 pages, 455549 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 567 PDF objects out of 1000 (max. 8388607)
+ 113 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
